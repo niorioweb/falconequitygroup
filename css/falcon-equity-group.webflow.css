@@ -274,6 +274,14 @@ figcaption {
   border-radius: var(--radius--button);
   background-color: var(--color-apply--font-primary);
   color: var(--color-apply--bg-primary);
+  /* change due to export bug */
+  height:3.2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  /* end of change*/
   letter-spacing: 1px;
   text-transform: capitalize;
   white-space: pre;
@@ -327,6 +335,9 @@ figcaption {
 }
 
 .button.go-ahead {
+  /* change due to export bug */
+  height:auto;
+  /* end of change */
   border: 3px solid var(--global-swatch--orange);
   border-radius: var(--radius--pill);
   background-color: var(--global-swatch--transparent);
@@ -340,16 +351,104 @@ figcaption {
   box-shadow: inset 0 0 2em -.25em rgba(0, 0, 0, .15);
 }
 
+.arrow-down {
+  height: 6em;
+  aspect-ratio: 1 / 1;
+  color: var(--global-swatch--orange);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: .5em;
+  font-size: 1em;
+  display: flex;
+}
+
+.arrow-down.dup {
+  position: absolute;
+  top: -6em;
+  bottom: auto;
+  left: auto;
+  right: auto;
+}
+
 .button.menu-button {
   border: 2px solid var(--color-apply--font-primary);
   background-color: var(--global-swatch--transparent);
   box-shadow: none;
   color: var(--color-apply--font-primary);
+  /* change due to export bug */
+  padding:0 1em;
+  height:3em;
+  /* end of change*/
 }
 
 .button.menu-button:hover {
   border-color: var(--global-swatch--orange);
   color: var(--global-swatch--orange);
+}
+
+.menu--button-text{
+  position:relative;
+  top:-1em;
+}
+
+.menu-sandwich {
+  width: 3.6em;
+  height: 3.6em;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  position: absolute;
+  top: -.36em;
+  bottom: 0%;
+  left: -.36em;
+  right: 0%;
+}
+
+.navigation-items {
+  z-index: 0;
+  width: 100%;
+  height: 100vh;
+  max-height: 100vh;
+  border-radius: var(--radius--card);
+  background-color: var(--color-apply--font-primary);
+  color: var(--color-apply--bg-primary);
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+  overflow: auto;
+}
+
+.navigation-item {
+  z-index: 2;
+  color: var(--color-apply--bg-primary);
+  text-transform: capitalize;
+  margin-bottom: .5em;
+  padding: .5em 1em;
+  font-size: 1.6em;
+  font-weight: 700;
+  display: flex;
+}
+
+.navigation-item:hover {
+  opacity: 1;
+  color: var(--global-swatch--orange);
+}
+
+.navigation-item:active {
+  opacity: .8;
+}
+
+.navigation-item.w--current {
+  opacity: .5;
+  color: var(--color-apply--bg-primary);
+}
+
+.navigation-item.w--current:active {
+  opacity: .7;
+  color: #32343a;
 }
 
 .label {
@@ -493,53 +592,8 @@ figcaption {
   right: 0%;
 }
 
-.navigation-item {
-  z-index: 2;
-  color: var(--color-apply--bg-primary);
-  text-transform: capitalize;
-  margin-bottom: .5em;
-  padding: .5em 1em;
-  font-size: 1.6em;
-  font-weight: 700;
-  display: flex;
-}
-
-.navigation-item:hover {
-  opacity: 1;
-  color: var(--global-swatch--orange);
-}
-
-.navigation-item:active {
-  opacity: .8;
-}
-
-.navigation-item.w--current {
-  opacity: .5;
-  color: var(--color-apply--bg-primary);
-}
-
-.navigation-item.w--current:active {
-  opacity: .7;
-  color: #32343a;
-}
-
 .logo-image {
   display: block;
-}
-
-.navigation-items {
-  z-index: 0;
-  width: 100%;
-  height: 100vh;
-  max-height: 100vh;
-  border-radius: var(--radius--card);
-  background-color: var(--color-apply--font-primary);
-  color: var(--color-apply--bg-primary);
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  display: flex;
-  overflow: auto;
 }
 
 .footer-wrap {
@@ -584,6 +638,13 @@ figcaption {
   padding-top: 4em;
   padding-bottom: 4.5em;
   display: flex;
+}
+
+.cta-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero {
@@ -892,6 +953,7 @@ figcaption {
   grid-row-gap: 3em;
   flex-direction: column;
   display: flex;
+  align-items: flex-start;
 }
 
 .arrow {
@@ -1342,42 +1404,8 @@ figcaption {
   opacity: 0;
 }
 
-.arrow-down {
-  height: 6em;
-  aspect-ratio: 1 / 1;
-  color: var(--global-swatch--orange);
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: .5em;
-  font-size: 1em;
-  display: flex;
-}
-
-.arrow-down.dup {
-  position: absolute;
-  top: -6em;
-  bottom: auto;
-  left: auto;
-  right: auto;
-}
-
 .is--hidden {
   display: none;
-}
-
-.menu-sandwich {
-  width: 3.6em;
-  height: 3.6em;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  display: none;
-  position: absolute;
-  top: -.36em;
-  bottom: 0%;
-  left: -.36em;
-  right: 0%;
 }
 
 .btn_text {
@@ -1441,6 +1469,7 @@ figcaption {
   height: 100%;
 }
 
+/* iPad Pro */
 @media screen and (min-width: 1280px) {
   body {
     font-size: 1.05vw;
@@ -1542,8 +1571,10 @@ figcaption {
   .testimony-slide {
     min-height: 40vh;
   }
+
 }
 
+/* tablet */
 @media screen and (max-width: 991px) {
   body {
     font-size: 1.8vw;
@@ -1592,7 +1623,7 @@ figcaption {
   }
 
   .button.menu-button {
-    padding: 1em;
+    padding: 0 1em;
   }
 
   .heading-jumbo {
@@ -1791,6 +1822,7 @@ figcaption {
   }
 }
 
+/* phone horizontal */
 @media screen and (max-width: 767px) {
   body {
     font-size: 2.4vw;
@@ -1844,6 +1876,22 @@ figcaption {
     background-color: var(--global-swatch--transparent);
     box-shadow: none;
     padding: 0;
+  }
+
+  .menu-sandwich {
+    width: 3em;
+    height: 3em;
+    color: var(--color-apply--font-primary);
+    padding-left: .5em;
+    padding-right: .5em;
+    display: block;
+    position: relative;
+    top: -8.7vw;
+    left:-0.25vw;
+  }
+
+  .hide-on-tablet {
+    display: none;
   }
 
   .rich-text {
@@ -2063,22 +2111,6 @@ figcaption {
     height: 4em;
   }
 
-  .menu-sandwich {
-    width: 3em;
-    height: 3em;
-    color: var(--color-apply--font-primary);
-    padding-left: .5em;
-    padding-right: .5em;
-    display: block;
-    position: relative;
-    top: -.9em;
-    left: 0;
-  }
-
-  .hide-on-tablet {
-    display: none;
-  }
-
   .btn_text {
     font-size: 16px;
     line-height: 28px;
@@ -2292,8 +2324,8 @@ figcaption {
     font-size: .8em;
     display: block;
     position: relative;
-    top: -1em;
-    left: .04em;
+    top: -13.4vw;
+    left:-0.15vw;
   }
 
   .hide-on-tablet, .logo-svg {
